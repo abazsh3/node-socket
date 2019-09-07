@@ -29,6 +29,7 @@ io.on('connection', (socket) => {
         room.playAgain++;
         if (room.playAgain===2){
             io.to(roomId).emit("playAgain");
+            room.playAgain=0;
         }
     });
 
